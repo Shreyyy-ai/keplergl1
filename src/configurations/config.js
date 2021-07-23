@@ -1,223 +1,231 @@
 export default {
-  version: 'v1',
-  config: {
-    visState: {
-      filters: [
+  "version": "v1",
+  "config": {
+    "visState": {
+      "filters": [],
+      "layers": [
         {
-          id: 'filter1',
-          dataId: 'trip1',
-          name: 'start_date_time',
-          type: 'timeRange',
-          enlarged: true,
-          plotType: "histogram",
-          animationWindow: "free",
-          yAxis: null,
-          speed: 1
-        },
-        {
-          id: 'filter2',
-          dataId: 'trip1',
-          name: 'start_date',
-          type: 'multiSelect',
-          enlarged: false,
-        },
-        {
-          dataId: "trip1",
-          id: "filter3",
-          name: "consignee_long",
-          type: "range",
-          value: [
-            62,
-            89
-          ],
-          enlarged: true,
-        }
-      ],
-      layers: [
-        {
-          id: 'layer1',
-          type: 'arc',
-          config: {
-            dataId: 'trip1',
-            label: 'trip-layer',
-            color: [1, 152, 189],
-            columns: {
-              lat0: 'consigner_lat',
-              lng0: 'consigner_long',
-              lat1: 'consignee_lat',
-              lng1: 'consignee_long',
-            },
-            isVisible: true,
-            visConfig: {
-              opacity: 0.8,
-              thickness: 1,
-              colorRange: {
-                name: 'Ice And Fire',
-                type: 'diverging',
-                category: 'Uber',
-                colors: ['#D50255', '#FEAD54', '#FEEDB1', '#E8FEB5', '#49E3CE', '#0198BD'],
-                reversed: true
-              },
-              sizeRange: [0,10],
-              targetColor: [213, 2, 85]
-            }
-          },
-          visualChannels: {
-              colorField: null,
-              colorScale: 'quantile',
-              sizeField: null,
-              sizeScale: 'linear'
-          }
-        },
-        {
-          id: "layer2",
-          type: "point",
-          config: {
-            dataId: "trip1",
-            label: "consigner layer",
-            color: [1, 152, 189],
-          columns: {
-            lat: "consigner_lat",
-            lng: "consigner_long",
-            altitude: null
-          },
-          isVisible: true,
-          visConfig: {
-            radius: 10,
-            fixedRadius: false,
-            opacity: 0.8,
-            outline: false,
-            thickness: 2,
-            strokeColor: null,
-            colorRange: {
-              name: 'Ice And Fire',
-              type: 'diverging',
-              category: 'Uber',
-              colors: ['#D50255', '#FEAD54', '#FEEDB1', '#E8FEB5', '#49E3CE', '#0198BD'],
-              reversed: true
-            },
-            strokeColorRange: {
-              name: 'Ice And Fire',
-              type: 'diverging',
-              category: 'Uber',
-              colors: ['#D50255', '#FEAD54', '#FEEDB1', '#E8FEB5', '#49E3CE', '#0198BD'],
-              reversed: true
-            },
-            radiusRange: [
-              0,
-              50
+          "id": "8jfly0g",
+          "type": "point",
+          "config": {
+            "dataId": "trip1",
+            "label": "Point",
+            "color": [
+              255,
+              203,
+              153
             ],
-            filled: true
+            "highlightColor": [
+              252,
+              242,
+              26,
+              255
+            ],
+            "columns": {
+              "lat": "latitude",
+              "lng": "longitude",
+              "altitude": null
             },
-            hidden: false,
-            textLabel: []
+            "isVisible": true,
+            "visConfig": {
+              "radius": 11,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": false,
+              "thickness": 2,
+              "strokeColor": null,
+              "colorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "strokeColorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "radiusRange": [
+                0,
+                30
+              ],
+              "filled": true
+            },
+            "hidden": false,
+            "textLabel": []
           },
-          visualChannels: {
-            colorField: null,
-            colorScale: "quantile",
-            strokeColorField: null,
-            strokeColorScale: "quantile",
-            sizeField: null,
-            sizeScale: "linear"
+          "visualChannels": {
+            "colorField": {
+              "name": "avg_duration",
+              "type": "real"
+            },
+            "colorScale": "quantile",
+            "strokeColorField": null,
+            "strokeColorScale": "quantile",
+            "sizeField": {
+              "name": "no_of_vehicles",
+              "type": "integer"
+            },
+            "sizeScale": "sqrt"
           }
         },
         {
-          id: "layer3",
-          type : "point",
-          config: {
-            dataId: "trip1",
-            label: "consignee layer",
-            color: [213, 2, 85],
-            columns: {
-              lat: "consignee_lat",
-              lng: "consignee_long",
-              altitude: null
+          "id": "3dh3enw",
+          "type": "heatmap",
+          "config": {
+            "dataId": "trip1",
+            "label": "new layer",
+            "color": [
+              30,
+              150,
+              190
+            ],
+            "highlightColor": [
+              252,
+              242,
+              26,
+              255
+            ],
+            "columns": {
+              "lat": "latitude",
+              "lng": "longitude"
             },
-            isVisible: true,
-            visConfig: {
-              radius: 10,
-              fixedRadius: false,
-              opacity: 0.8,
-              outline: false,
-              thickness: 2,
-              strokeColor: null,
-              colorRange: {
-                name: 'Ice And Fire',
-                type: 'diverging',
-                category: 'Uber',
-                colors: ['#D50255', '#FEAD54', '#FEEDB1', '#E8FEB5', '#49E3CE', '#0198BD'],
-                reversed: true
+            "isVisible": true,
+            "visConfig": {
+              "opacity": 0.8,
+              "colorRange": {
+                "name": "Uber Viz Sequential 4",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#E6FAFA",
+                  "#C1E5E6",
+                  "#9DD0D4",
+                  "#75BBC1",
+                  "#4BA7AF",
+                  "#00939C"
+                ]
               },
-              strokeColorRange: {
-                name: 'Ice And Fire',
-                type: 'diverging',
-                category: 'Uber',
-                colors: ['#D50255', '#FEAD54', '#FEEDB1', '#E8FEB5', '#49E3CE', '#0198BD'],
-                reversed: true
-              },
-              radiusRange: [
-                0,
-                50
-              ],
-              filled: true
+              "radius": 50
             },
-            hidden: false,
-            textLabel: []
-          },
-          visualChannels: {
-            colorField: null,
-            colorScale: "quantile",
-            strokeColorField: null,
-            strokeColorScale: "quantile",
-            sizeField: null,
-            sizeScale: "linear"
-          }
-        }  
-      ],
-      interactionConfig: {
-        tooltip: {
-          fieldsToShow: {
-            trip1_data: [
-              {name: 'consigner_lat', format: null},
-              {name: 'consigner_long' , format: null}, 
-              {name: 'start_date', format: null}
+            "hidden": false,
+            "textLabel": [
+              {
+                "field": null,
+                "color": [
+                  255,
+                  255,
+                  255
+                ],
+                "size": 18,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "start",
+                "alignment": "center"
+              }
             ]
           },
-          enabled: true
+          "visualChannels": {
+            "weightField": {
+              "name": "total_duration",
+              "type": "real"
+            },
+            "weightScale": "linear"
+          }
+        }
+      ],
+      "interactionConfig": {
+        "tooltip": {
+          "fieldsToShow": {
+            "trip1": [
+              {
+                "name": "id",
+                "format": null
+              },
+              {
+                "name": "stoppage_identifier",
+                "format": null
+              },
+              {
+                "name": "stoppage_type",
+                "format": null
+              },
+              {
+                "name": "no_of_vehicles",
+                "format": null
+              },
+              {
+                "name": "avg_duration",
+                "format": null
+              }
+            ]
+          },
+          "compareMode": false,
+          "compareType": "absolute",
+          "enabled": true
         },
-        brush: {
-          size: 0.5,
-          enabled: false
+        "brush": {
+          "size": 0.5,
+          "enabled": false
         },
-        geocoder: {
-          enabled: false
+        "geocoder": {
+          "enabled": false
+        },
+        "coordinate": {
+          "enabled": false
         }
       },
-      layerBlending: 'normal',
-      splitMaps: []
-    },
-    mapState: {
-      bearing: 0,
-      dragRotate: true,
-      latitude: 23.34,
-      longitude: 72.69,
-      pitch: 0,
-      zoom: 4,
-      isSplit: false
-    },
-    mapStyle: {
-      styleType: 'dark',
-      topLayerGroups: {
-        label: true
-      },
-      visibleLayerGroups: {
-        label: true,
-        road: true,
-        border: true,
-        building: true,
-        water: true,
-        land: true
+      "layerBlending": "normal",
+      "splitMaps": [],
+      "animationConfig": {
+        "currentTime": null,
+        "speed": 1
       }
+    },
+    "mapState": {
+      "bearing": 0,
+      "dragRotate": false,
+      "latitude": 18.143407241324958,
+      "longitude": 77.50349778093052,
+      "pitch": 0,
+      "zoom": 3.8397065810380537,
+      "isSplit": false
+    },
+    "mapStyle": {
+      "styleType": "dark",
+      "topLayerGroups": {},
+      "visibleLayerGroups": {
+        "label": true,
+        "road": true,
+        "border": false,
+        "building": true,
+        "water": true,
+        "land": true,
+        "3d building": false
+      },
+      "threeDBuildingColor": [
+        9.665468314072013,
+        17.18305478057247,
+        31.1442867897876
+      ],
+      "mapStyles": {}
     }
   }
 };
