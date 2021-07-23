@@ -11,100 +11,10 @@ class App extends Component {
     super(props);
  
     this.state = {
-      data: {
-        "fields": [
-            {
-                "name": "id",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "stoppage_identifier",
-                "format": "",
-                "type": "string"
-            },
-            {
-                "name": "latitude",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "longitude",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "stoppage_type",
-                "format": "",
-                "type": "string"
-            },
-            {
-                "name": "no_of_vehicles",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "avg_duration",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "total_duration",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "min_duration",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "max_duration",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "median_duration",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "landmark",
-                "format": "",
-                "type": "string"
-            },
-            {
-                "name": "stoppage_category",
-                "format": "",
-                "type": "string"
-            },
-            {
-                "name": "weight",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "lstoppage_route_id",
-                "format": "",
-                "type": "real"
-            },
-            {
-                "name": "stoppage_class",
-                "format": "",
-                "type": "string"
-            },
-            {
-                "name": "stoppage_id",
-                "format": "",
-                "type": "real"
-            }
-        ],
-        "rows": []
-      }
-    };
+      data: null
   }
-
-  componentDidMount () {
+}
+  // componentDidMount () {
     // fetch('http://localhost:8000/tripData')
     //   .then(response => response.json())
     //   .then(data => {
@@ -134,37 +44,37 @@ class App extends Component {
     //   });
 
   
-    fetchData().then(res => {
-      // console.log('appcomponent',JSON.stringify(res));
-      this.setState(this.state.data.rows = res,() => {
-        console.log('appComponent',this.state.data);
-        this.props.dispatch(
-          wrapTo(
-            "Map1",
-            addDataToMap({
-              datasets: {
-                  info: {
-                  label: "trip1",
-                  id: "trip1"
-                  },
-                  data: this.state.data
-              },
-              option: {
-                  centerMap: false,
-                  readOnly: false
-              },
-              config
-            })
-          )  
-        );
-      })
-    })
+    // fetchData().then(res => {
+    //   // console.log('appcomponent',JSON.stringify(res));
+    //   this.setState(this.state.data.rows = res,() => {
+    //     console.log('appComponent',this.state.data);
+    //     this.props.dispatch(
+    //       wrapTo(
+    //         "Map1",
+    //         addDataToMap({
+    //           datasets: {
+    //               info: {
+    //               label: "trip1",
+    //               id: "trip1"
+    //               },
+    //               data: this.state.data
+    //           },
+    //           option: {
+    //               centerMap: false,
+    //               readOnly: false
+    //           },
+    //           config
+    //         })
+    //       )  
+    //     );
+    //   })
+    // })
 
     // fetchData().then((result) => {
     //   console.log(result);
     // })
 
-  }
+  // }
 
 
   render() {
